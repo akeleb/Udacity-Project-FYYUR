@@ -1,0 +1,67 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Edit Venue{% endblock %}
+{% block content %}
+  <div class="form-wrapper">
+    <form class="form" method="post" action="/venues/{{venue.id}}/edit">
+      <h3 class="form-heading">Edit venue <em>{{ venue.name }}</em> <a href="{{ url_for('index') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{ form.name(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+          <label>City & State</label>
+          <div class="form-inline">
+            <div class="form-group">
+              {{ form.city(class_ = 'form-control', placeholder='City', autofocus = true) }}
+            </div>
+            <div class="form-group">
+              {{ form.state(class_ = 'form-control', placeholder='State', autofocus = true) }}
+            </div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        {{ form.address(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+          <label for="phone">Phone</label>
+          {{ form.phone(class_ = 'form-control', placeholder='xxx-xxx-xxxx', autofocus = true) }}
+        </div>
+      <div class="form-group">
+        <label for="genres">Genres</label>
+        <small>Ctrl+Click to select multiple</small>
+        {{ form.genres(class_ = 'form-control', placeholder='Genres, separated by commas', autofocus = true) }}
+      </div>
+      <div class="form-group">
+          <label for="genres">Facebook Link</label>
+          {{ form.facebook_link(class_ = 'form-control', placeholder='http://', autofocus = true) }}
+        </div>
+
+      <div class="form-group">
+          <label for="website">website</label>
+          {{ form.website(class_ = 'form-control', placeholder='http://',  autofocus = true) }}
+        </div>
+        <div class="form-group">
+            <label for="image_link">Image Link</label>
+            {{ form.image_link(class_ = 'form-control', placeholder='http://',  autofocus = true) }}
+          </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="seeking_talent" id="radio-1" value='True'>
+        <label class="form-check-label" for="radio-1">
+        seeking talent
+        </label>
+      </div>
+      <div class="form-check" style="margin-bottom:10px;">
+        <input class="form-check-input" type="radio" name="seeking_talent" id='radio-2' value='False' checked>
+        <label class="form-check-label" for="radio-2">
+          Not currently seeking talent
+        </label>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">description for seeking talent</label>
+        <textarea class="form-control" name='seeking_description' id="Textarea1" rows="3"></textarea>
+      </div>
+      <input type="submit" value="Edit Venue" class="btn btn-primary btn-lg btn-block">
+    </form>
+  </div>
+{% endblock %}
