@@ -91,6 +91,7 @@ def show_venue(venue_id):
         })
     data = {'upcoming_shows_count': len(upcoming_shows), 'past_shows_count': len(
         past_shows), 'upcoming_shows': upcoming_shows, 'past_shows': past_shows}
+
     return render_template('pages/show_venue.html', data=data, venue_genres=venue_genres, venue=venue1)
 
 #  Create Venue ----------------------------------------------------------------
