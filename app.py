@@ -2,6 +2,7 @@
 # Imports
 #----------------------------------------------------------------------------#
 
+import os
 from datetime import datetime
 import dateutil.parser
 import babel
@@ -13,6 +14,7 @@ from forms import *
 import sys
 from model import app, db, Venue, Artist, Show
 import collections
+from waitress import serve
 
 moment = Moment(app)
 db.init_app(app)
@@ -431,13 +433,12 @@ if not app.debug:
 #----------------------------------------------------------------------------#
 
 # Default port:
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
 
 # Or specify port manually:
-'''
-import os
+
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 3000))
-    app.run(host='0.0.0.0', port=port)
-'''
+    # port = int(os.environ.get('PORT', 3000))
+    # app.run(host='0.0.0.0', port=port)
+    serve(app, host='0.0.0.0', port='3000')

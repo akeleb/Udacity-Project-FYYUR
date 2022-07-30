@@ -347,3 +347,4 @@ sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) FATAL:  password au
 
 (Background on this error at: https://sqlalche.me/e/14/e3q8)
 2022-07-30 11:12:44,918 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:427]
+2022-07-30 12:02:38,215 INFO: errors [in C:\Users\Akele\Documents\VScode\MyFyyurProject\app.py:427]
