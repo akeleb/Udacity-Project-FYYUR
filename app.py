@@ -14,7 +14,6 @@ import sys
 from model import app, db, Venue, Artist, Show
 import collections
 
-app.config.from_object('config')
 moment = Moment(app)
 db.init_app(app)
 #----------------------------------------------------------------------------#
