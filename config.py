@@ -11,6 +11,6 @@ DEBUG = False
 
 # TODO IMPLEMENT DATABASE URL
 # For my local dataase I use the following commented line
-# SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:Aklexsqldb14@localhost:5432/fyyurpdb'
-SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Akele:Aklexazsqldb14@pgforudacity.postgres.database.azure.com/fyyur?sslmode=require'
-# This an online database I used on this project
+# SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:yourdbpassword@localhost:5432/fyyurpdb'
+SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://Akele:Your-password@pgforudacity.postgres.database.azure.com/fyyur?sslmode=require'
+# This an online database I used on this project and this is just for dev/test purpose. 
