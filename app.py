@@ -101,8 +101,8 @@ def show_venue(venue_id):
 
 @app.route('/venues/create', methods=['GET'])
 def create_venue_form():
-    form = VenueForm()
-    return render_template('forms/new_venue.html', form=form)
+    FlaskForm = VenueForm()
+    return render_template('forms/new_venue.html', form=FlaskForm)
 
 
 @app.route('/venues/create', methods=['POST'])
@@ -228,9 +228,9 @@ def show_artist(artist_id):
 
 @app.route('/artists/<int:artist_id>/edit', methods=['GET'])
 def edit_artist(artist_id):
-    form = ArtistForm()
+    FlaskForm = ArtistForm()
     artist = Artist.query.get(artist_id)
-    return render_template('forms/edit_artist.html', form=form, artist=artist)
+    return render_template('forms/edit_artist.html', form=FlaskForm, artist=artist)
 
 
 @app.route('/artists/<int:artist_id>/edit', methods=['POST'])
@@ -314,8 +314,8 @@ def edit_venue_submission(venue_id):
 
 @app.route('/artists/create', methods=['GET'])
 def create_artist_form():
-    form = ArtistForm()
-    return render_template('forms/new_artist.html', form=form)
+    FlaskForm = ArtistForm()
+    return render_template('forms/new_artist.html', form=FlaskForm)
 
 
 @app.route('/artists/create', methods=['POST'])
@@ -379,8 +379,8 @@ def shows():
 
 @app.route('/shows/create')
 def create_shows():
-    form = ShowForm()
-    return render_template('forms/new_show.html', form=form)
+    FlaskForm = ShowForm()
+    return render_template('forms/new_show.html', form=FlaskForm)
 
 
 @app.route('/shows/create', methods=['POST'])
