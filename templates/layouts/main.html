@@ -108,8 +108,19 @@
 
   <div id="footer">
     <div class="container">
-      <p>Fyyur &copy; All Rights Reserved.</p>
-      {% block footer %}{% endblock %}
+      
+      <div class="copyright">
+        Copyright  &copy; <strong><span id="current_date"></span></strong
+         ><i><span> fyyur</span></i>. All Rights Reserved
+       </div>
+     <script>
+         document.getElementById("current_date").innerHTML = new Date().getFullYear();
+         </script>
+      
+    </div>
+    <div class="credits">
+      Made by
+        <a href="https://ahadu.thinkethio.com/akele/index.html" target="_blank"> Akele Belay Walelign</a>
     </div>
   </div>
 
