@@ -1,7 +1,7 @@
 Fyyur
 -----
 
-You can try the live app here http://education.thinkethio.com/
+You can try the live app here https://fyyur.thinkethio.com/
 
 ## Introduction
 
