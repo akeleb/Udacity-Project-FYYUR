@@ -68,7 +68,6 @@ def search_venues():
 def show_venue(venue_id):
     venue1 = Venue.query.get(venue_id)
     venue_genres = [s.strip() for s in venue1.genres[1:-1].split(',')]
-    print(venue_genres)
     upcoming_shows_details = db.session.query(Show).join(Artist).filter(
         Show.venue_id == venue_id).filter(Show.start_time >= datetime.now()).all()
     past_shows_details = db.session.query(Show).join(Artist).filter(
@@ -137,7 +136,7 @@ def create_venue_submission():
     # on successful db insert, flash success
     except:
         db.session.rollback()
-        print(sys.exc_info())
+      
         flash('An error occurred. Venue ' +
               data['name'] + ' could not be listed.')
     finally:
