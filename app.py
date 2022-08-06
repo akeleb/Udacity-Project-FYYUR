@@ -173,6 +173,7 @@ def delete_artist(artist_id):
         artist = Artist.query.get(artist_id)
         db.session.delete(artist)
         db.session.commit()
+        flash('Sucessfuly deleted')
     except:
         db.session.rollback()
     finally:
