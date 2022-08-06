@@ -47,8 +47,6 @@ def index():
 def venues():
     states = db.session.query(Venue.state, Venue.city).distinct().all()
     venues = db.session.query(Venue).all()
-    print(states)
-    print(venues)
     return render_template('pages/venues.html', states=states, venues=venues)
 
 
@@ -153,11 +151,13 @@ def delete_venue(venue_id):
         venue = Venue.query.get(venue_id)
         db.session.delete(venue)
         db.session.commit()
+        flash('The venue was successfully deleted!')
     except:
         db.session.rollback()
     finally:
         db.session.close()
     return redirect(url_for('venues'))
+
 
 #  Artists----------------------------------------------------------------
 
@@ -260,6 +260,7 @@ def edit_artist_submission(artist_id):
         artist.seeking_venus = (data['seeking_venus'] == 'True')
         artist.seeking_description = data['seeking_description']
         db.session.commit()
+        flash('The Artist was successfully edited!')
     except:
         db.session.rollback()
     finally:
@@ -303,6 +304,7 @@ def edit_venue_submission(venue_id):
         venue.seeking_talent = (data['seeking_talent'] == 'True')
         venue.seeking_description = data['seeking_description']
         db.session.commit()
+        flash('The venue was successfully edited!')
     except:
         db.session.rollback()
     finally:
@@ -438,7 +440,7 @@ if not app.debug:
 
 # Or specify port manually:
 
-if __name__ == '__main__':
-    # port = int(os.environ.get('PORT', 3000))
-    # app.run(host='0.0.0.0', port=port)
+# if __name__ == '__main__':
+#     # port = int(os.environ.get('PORT', 3000))
+#     # app.run(host='0.0.0.0', port=port)
     serve(app, host='0.0.0.0', port='5000')
